@@ -619,83 +619,6 @@ h2 { font-family:'Fredoka',sans-serif; color:#4a3722; text-shadow:0 1px 0 rgba(2
 }
 
 
-/* Dragon / KVK image pairs: always two images in one row */
-.kvk-images {
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  gap:12px;
-  width:100%;
-}
-
-.kvk-images img {
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-@media(max-width:768px){
-  .kvk-container {
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-
-  .kvk-images {
-    display:grid !important;
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-    gap:7px;
-  }
-
-  .kvk-images img {
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:cover;
-    border-radius:10px;
-  }
-
-  /* Keep the first screen compact and centered on phones */
-  header {
-    min-height:100svh;
-    height:100svh;
-    padding-left:16px;
-    padding-right:16px;
-  }
-
-  header h1 {
-    font-size:clamp(28px,8vw,38px);
-    letter-spacing:1.5px;
-  }
-
-  header .subtitle {
-    font-family:'Fredoka',sans-serif;
-    font-size:10px;
-    letter-spacing:2.5px;
-  }
-
-  section {
-    padding:44px 13px;
-  }
-
-  h2 {
-    font-family:'Fredoka',sans-serif;
-    font-size:24px;
-    font-weight:700;
-  }
-
-  .alliance-container {
-    width:100%;
-  }
-
-  .content-column {
-    min-width:0;
-  }
-
-  .card {
-    padding:17px;
-  }
-}
 
 
 .hero-star {
@@ -716,24 +639,6 @@ h2 { font-family:'Fredoka',sans-serif; color:#4a3722; text-shadow:0 1px 0 rgba(2
 }
 
 
-.kvk-record-row {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 14px;
-  margin-top:8px;
-  border:1px solid rgba(173,135,76,.16);
-  border-radius:9px;
-  background:linear-gradient(90deg,rgba(171,132,69,.07),rgba(255,255,255,.28));
-  color:#604728;
-  font-family:'Nunito',sans-serif;
-}
-
-.kvk-record-row strong {
-  font-family:'Fredoka',sans-serif;
-  font-size:15px;
-  color:#7b5a2f;
-}
 
 @media(max-width:768px){
   .kvk-record-row {
@@ -805,6 +710,24 @@ h2 { font-family:'Fredoka',sans-serif; color:#4a3722; text-shadow:0 1px 0 rgba(2
   .kvk-images img {
     height:auto;
     aspect-ratio:16/10;
+  }
+}
+
+
+/* Final mobile hero title override */
+@media(max-width:768px){
+  header.mobile-hero h1,
+  header h1 {
+    display:block !important;
+    font-family:'Cinzel Decorative','Cinzel',serif !important;
+    font-weight:900 !important;
+    color:#684622 !important;
+    -webkit-text-fill-color:#684622 !important;
+    text-shadow:
+      0 2px 0 rgba(255,255,255,0.92),
+      0 4px 0 rgba(133,94,48,0.16),
+      0 8px 18px rgba(69,45,24,0.20) !important;
+    letter-spacing:1.5px !important;
   }
 }
 
@@ -912,19 +835,24 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
   <h2>KVK RECORD</h2>
 
   <div class="kvk-container">
+
     <div class="kvk-images">
-      <img src="images/kvk-photo-1.jpg" onclick="openImg(this.src)" alt="KVK photo 1">
-      <img src="images/kvk-photo-2.jpg" onclick="openImg(this.src)" alt="KVK photo 2">
+      <img src="kvk1.jpg" onclick="openImg(this.src)">
+      <img src="kvk2.jpg" onclick="openImg(this.src)">
     </div>
 
     <div class="card kvk">
-      <h4>⚔ KVK PERFORMANCE</h4>
-      <div class="kvk-record-row"><span>KOA 1</span><strong>5/5</strong></div>
-      <div class="kvk-record-row"><span>KOA 2</span><strong>5/5</strong></div>
-      <div class="kvk-record-row"><span>KOA 3</span><strong>5/5</strong></div>
-      <div class="kvk-record-row"><span>KOA 4</span><strong>5/5</strong></div>
-      <div class="kvk-record-row"><span>KOA 5</span><strong>5/5</strong></div>
+      <h4>KVK RESULTS</h4>
+
+      <p>
+      🔥 Ranked #93 out of 1,529 servers (KingShot Atlas - Apr 11, 2026)<br><br>
+
+      <h4>⚔ KVK Performance</h4><br>
+      Preparation Phase: 7 Wins / 8 Battles (6-win streak, 88%)<br>
+      Battle Phase: 4 Wins / 8 Battles (2-win streak, 50%)
+      </p>
     </div>
+
   </div>
 </section>
   </div>
