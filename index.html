@@ -715,6 +715,99 @@ h2 { font-family:'Fredoka',sans-serif; color:#4a3722; text-shadow:0 1px 0 rgba(2
   }
 }
 
+
+.kvk-record-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  margin-top:8px;
+  border:1px solid rgba(173,135,76,.16);
+  border-radius:9px;
+  background:linear-gradient(90deg,rgba(171,132,69,.07),rgba(255,255,255,.28));
+  color:#604728;
+  font-family:'Nunito',sans-serif;
+}
+
+.kvk-record-row strong {
+  font-family:'Fredoka',sans-serif;
+  font-size:15px;
+  color:#7b5a2f;
+}
+
+@media(max-width:768px){
+  .kvk-record-row {
+    padding:10px 12px;
+    font-size:13px;
+  }
+
+  .kvk-record-row strong {
+    font-size:14px;
+  }
+}
+
+/* Temporary alliance previews: same background image, cropped differently,
+   so the image area is visible until real alliance images are added. */
+.image-column img:nth-child(1) {
+  object-position:center left;
+}
+
+.image-column img:nth-child(2) {
+  object-position:center right;
+}
+
+
+/* Alliance photo slots: desktop = vertical stack; mobile = compact 2x2 grid.
+   The broken src is intentional so the browser visibly shows an image placeholder. */
+.image-column {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.image-column img {
+  display:block;
+  width:100%;
+  height:190px;
+  min-height:190px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:12px;
+  border:1px dashed rgba(164,124,63,.40);
+  background:rgba(255,250,239,.72);
+  box-shadow:0 6px 14px rgba(68,48,25,.07);
+  color:#866b45;
+  font-family:'Fredoka',sans-serif;
+  font-size:14px;
+  text-align:center;
+}
+
+@media(max-width:768px){
+  .image-column {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .image-column img {
+    height:104px;
+    min-height:104px;
+    border-radius:9px;
+    font-size:10px;
+  }
+
+  .kvk-images {
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:7px;
+  }
+
+  .kvk-images img {
+    height:auto;
+    aspect-ratio:16/10;
+  }
+}
+
 </style>
 </head>
 
@@ -819,25 +912,19 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
   <h2>KVK RECORD</h2>
 
   <div class="kvk-container">
-
     <div class="kvk-images">
-      <img src="kvk1.jpg" onclick="openImg(this.src)">
-      <img src="kvk2.jpg" onclick="openImg(this.src)">
+      <img src="images/kvk-photo-1.jpg" onclick="openImg(this.src)" alt="KVK photo 1">
+      <img src="images/kvk-photo-2.jpg" onclick="openImg(this.src)" alt="KVK photo 2">
     </div>
 
     <div class="card kvk">
-      <h4>KVK RESULTS</h4>
-
-      <p>
-🔥 Ranked #93 out of 1,529 servers (KingShot Atlas - Apr 11, 2026)<br><br>
-
-<h4>⚔ KVK Performance</h4><br>
-Preparation Phase: 7 Wins / 8 Battles (6-win streak, 88%)<br>
-Battle Phase: 4 Wins / 8 Battles (2-win streak, 50%)
-      </p>
-
+      <h4>⚔ KVK PERFORMANCE</h4>
+      <div class="kvk-record-row"><span>KOA 1</span><strong>5/5</strong></div>
+      <div class="kvk-record-row"><span>KOA 2</span><strong>5/5</strong></div>
+      <div class="kvk-record-row"><span>KOA 3</span><strong>5/5</strong></div>
+      <div class="kvk-record-row"><span>KOA 4</span><strong>5/5</strong></div>
+      <div class="kvk-record-row"><span>KOA 5</span><strong>5/5</strong></div>
     </div>
-
   </div>
 </section>
   </div>
@@ -873,90 +960,106 @@ Battle Phase: 4 Wins / 8 Battles (2-win streak, 50%)
 </div>
 <script>
 const data={
-alliance1:{
-  images:[],
-  content:`
-    <div class="card">
-      <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">🛡️ SOL</p>
-      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
-      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
-    </div>
-    <div class="card">
-      <h4>Alliance Policy / Philosophy</h4>
-      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
-    </div>
-    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
-    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
-    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
-    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
-    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
-  `
-},
-alliance2:{
-  images:[],
-  content:`
-    <div class="card">
-      <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">⚔️ SKI</p>
-      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
-      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
-    </div>
-    <div class="card">
-      <h4>Alliance Policy / Philosophy</h4>
-      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
-    </div>
-    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
-    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
-    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
-    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
-    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
-  `
-},
-alliance3:{
-  images:[],
-  content:`
-    <div class="card">
-      <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">☁️ SIN</p>
-      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
-      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
-    </div>
-    <div class="card">
-      <h4>Alliance Policy / Philosophy</h4>
-      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
-    </div>
-    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
-    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
-    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
-    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
-    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
-  `
-},
-alliance4:{
-  images:[],
-  content:`
-    <div class="card">
-      <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">🏰 cuz</p>
-      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
-      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
-    </div>
-    <div class="card">
-      <h4>Alliance Policy / Philosophy</h4>
-      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
-    </div>
-    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
-    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
-    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
-    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
-    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
-  `
-}
+  alliance1:{
+    images:["__placeholder__/sol-1.jpg","__placeholder__/sol-2.jpg","__placeholder__/sol-3.jpg","__placeholder__/sol-4.jpg"],
+    content:`
+      <div class="card">
+        <h4>📊 Overview</h4>
+        <p style="font-weight:600; margin-bottom:10px;">🛡️ SOL</p>
+        <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+        <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
+      </div>
+
+      <div class="card">
+        <h4>Alliance Policy / Philosophy</h4>
+        <p>
+          We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+          We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
+        </p>
+      </div>
+
+      <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+      <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+      <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+      <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+      <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
+    `
+  },
+  alliance2:{
+    images:["__placeholder__/ski-1.jpg","__placeholder__/ski-2.jpg","__placeholder__/ski-3.jpg","__placeholder__/ski-4.jpg"],
+    content:`
+      <div class="card">
+        <h4>📊 Overview</h4>
+        <p style="font-weight:600; margin-bottom:10px;">⚔️ SKI</p>
+        <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+        <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
+      </div>
+
+      <div class="card">
+        <h4>Alliance Policy / Philosophy</h4>
+        <p>
+          We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+          We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
+        </p>
+      </div>
+
+      <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+      <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+      <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+      <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+      <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
+    `
+  },
+  alliance3:{
+    images:["__placeholder__/sin-1.jpg","__placeholder__/sin-2.jpg","__placeholder__/sin-3.jpg","__placeholder__/sin-4.jpg"],
+    content:`
+      <div class="card">
+        <h4>📊 Overview</h4>
+        <p style="font-weight:600; margin-bottom:10px;">☁️ SIN</p>
+        <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+        <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
+      </div>
+
+      <div class="card">
+        <h4>Alliance Policy / Philosophy</h4>
+        <p>
+          We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+          We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
+        </p>
+      </div>
+
+      <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+      <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+      <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+      <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+      <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
+    `
+  },
+  alliance4:{
+    images:["__placeholder__/cuz-1.jpg","__placeholder__/cuz-2.jpg","__placeholder__/cuz-3.jpg","__placeholder__/cuz-4.jpg"],
+    content:`
+      <div class="card">
+        <h4>📊 Overview</h4>
+        <p style="font-weight:600; margin-bottom:10px;">🏰 cuz</p>
+        <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+        <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
+      </div>
+
+      <div class="card">
+        <h4>Alliance Policy / Philosophy</h4>
+        <p>
+          We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+          We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
+        </p>
+      </div>
+
+      <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+      <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+      <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+      <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+      <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
+    `
+  }
 };
 
 function showAlliance(e,key){
