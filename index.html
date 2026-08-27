@@ -372,47 +372,99 @@ footer {
 /* MOBILE */
 @media(max-width:768px){
 
+  html {
+    scroll-behavior:smooth;
+  }
+
   body {
     background:
-      linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.12)),
-      url('bg.jpg') center top/auto 100vh no-repeat fixed;
-    background-color:#f5f3ee;
+      linear-gradient(rgba(248,242,228,0.08), rgba(248,242,228,0.16)),
+      url('bg.jpg') center top/auto 100svh no-repeat fixed;
+    background-color:#f5f0e6;
+    overflow-x:hidden;
   }
 
   header {
-    min-height:78vh;
-    height:auto;
+    height:100svh;
+    min-height:620px;
+    box-sizing:border-box;
     position:relative;
     overflow:hidden;
-    padding:60px 18px 50px;
-    box-sizing:border-box;
-    justify-content:flex-end;
+    padding:
+      calc(24px + env(safe-area-inset-top))
+      18px
+      calc(30px + env(safe-area-inset-bottom));
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    isolation:isolate;
+  }
+
+  header::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:
+      radial-gradient(circle at 50% 48%, rgba(255,255,255,0.12), transparent 42%),
+      linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(94,64,30,0.10));
+    pointer-events:none;
+  }
+
+  header::after {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-1px;
+    height:110px;
+    z-index:-1;
+    background:linear-gradient(to bottom, transparent, rgba(245,240,230,0.92));
+    pointer-events:none;
   }
 
   header h1 {
     display:block;
     position:relative;
     z-index:1;
+    margin:0;
+    padding:0 8px;
     font-family:'Cinzel Decorative','Cinzel',serif;
-    font-size:30px;
+    font-size:clamp(29px,8.2vw,39px);
     font-weight:900;
     letter-spacing:2px;
-    line-height:1.2;
-    color:#6a4b2a;
+    line-height:1.16;
+    color:#684622;
     text-shadow:
-      0 2px 0 rgba(255,255,255,0.8),
-      0 4px 10px rgba(70,48,26,0.22);
-    margin:0;
+      0 2px 0 rgba(255,255,255,0.92),
+      0 4px 0 rgba(133,94,48,0.16),
+      0 8px 18px rgba(69,45,24,0.22);
+    filter:drop-shadow(0 3px 5px rgba(70,46,23,0.14));
+  }
+
+  header h1::before,
+  header h1::after {
+    content:"✦";
+    display:inline-block;
+    margin:0 10px;
+    color:#b28a4e;
+    font-family:Georgia,serif;
+    font-size:0.42em;
+    vertical-align:middle;
   }
 
   header .subtitle {
     display:block;
     position:relative;
     z-index:1;
+    margin-top:13px;
+    font-family:'Cinzel',serif;
     font-size:10px;
+    font-weight:700;
     letter-spacing:3px;
-    margin-top:9px;
-    color:#80633f;
+    color:#86643b;
+    text-transform:uppercase;
+    opacity:0.95;
   }
 
   .btn {
@@ -420,11 +472,24 @@ footer {
     z-index:1;
     display:inline-flex;
     align-self:center;
-    margin-top:18px;
+    justify-content:center;
+    min-width:118px;
+    margin-top:21px;
     padding:12px 30px;
+    border-radius:30px;
     font-size:14px;
     letter-spacing:2px;
-    border-radius:30px;
+    color:#fff;
+    background:linear-gradient(135deg,#8f6938,#c39a55);
+    border:2px solid rgba(255,255,255,0.58);
+    box-shadow:
+      0 7px 18px rgba(74,48,22,0.20),
+      inset 0 2px 0 rgba(255,255,255,0.42),
+      inset 0 -2px 0 rgba(82,52,22,0.15);
+  }
+
+  .btn:active {
+    transform:translateY(1px) scale(0.97);
   }
 
   section {
@@ -435,11 +500,13 @@ footer {
     font-size:25px;
     letter-spacing:1px;
     margin:0 0 28px;
+    color:#3f3325;
   }
 
   h2::after {
     width:150px;
     margin:12px auto;
+    background:linear-gradient(to right,transparent,#b28a4e,#d2b273,#b28a4e,transparent);
   }
 
   .overview {
@@ -450,12 +517,17 @@ footer {
   .card {
     border-radius:14px;
     padding:18px;
-    box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    background:rgba(255,253,248,0.92);
+    box-shadow:
+      0 6px 18px rgba(74,50,27,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.75);
+    border:1px solid rgba(178,138,78,0.22);
   }
 
   .card h4 {
     font-size:15px;
     line-height:1.35;
+    color:#4a3926;
   }
 
   .card p {
