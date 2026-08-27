@@ -665,15 +665,302 @@ footer {
 
   border: 1px solid rgba(255,160,60,0.8);
 }
+
+/* GAME-STYLE NAVIGATION */
+html { scroll-padding-top:72px; }
+
+.top-nav {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:5000;
+  background:rgba(67,47,27,0.82);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(221,188,126,0.35);
+  box-shadow:0 4px 18px rgba(46,31,17,0.16);
+}
+
+.nav-inner {
+  max-width:1200px;
+  height:68px;
+  margin:auto;
+  padding:0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-sizing:border-box;
+}
+
+.nav-logo {
+  font-family:'Cinzel Decorative','Cinzel',serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:2px;
+  color:#f4dfb1;
+  text-decoration:none;
+  text-shadow:0 2px 5px rgba(0,0,0,0.28);
+  white-space:nowrap;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.nav-links a {
+  position:relative;
+  padding:10px 13px;
+  color:#f7ead0;
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-decoration:none;
+  border-radius:8px;
+  transition:all .2s ease;
+}
+
+.nav-links a::after {
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:5px;
+  height:1px;
+  background:#d2ad68;
+  transform:scaleX(0);
+  transition:transform .2s ease;
+}
+
+.nav-links a:hover {
+  color:#fff6df;
+  background:rgba(255,255,255,0.08);
+}
+
+.nav-links a:hover::after {
+  transform:scaleX(1);
+}
+
+.nav-toggle {
+  display:none;
+  border:1px solid rgba(231,201,145,0.5);
+  background:rgba(255,255,255,0.08);
+  color:#f7ead0;
+  border-radius:8px;
+  padding:7px 10px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .top-nav {
+    background:rgba(61,43,27,0.88);
+  }
+
+  .nav-inner {
+    height:58px;
+    padding:0 14px;
+  }
+
+  .nav-logo {
+    font-size:13px;
+    letter-spacing:1.2px;
+  }
+
+  .nav-toggle {
+    display:block;
+  }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:58px;
+    left:10px;
+    right:10px;
+    padding:8px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:2px;
+    background:rgba(61,43,27,0.96);
+    border:1px solid rgba(221,188,126,0.28);
+    border-radius:0 0 12px 12px;
+    box-shadow:0 10px 25px rgba(40,25,12,0.22);
+  }
+
+  .nav-links.open {
+    display:flex;
+  }
+
+  .nav-links a {
+    padding:12px 14px;
+    font-size:11px;
+  }
+
+  .nav-links a::after {
+    display:none;
+  }
+}
+
+
+/* ===== KINGDOM GAME PORTAL POLISH ===== */
+body {
+  color:#4a3926;
+}
+
+section {
+  position:relative;
+  scroll-margin-top:78px;
+}
+
+section::before {
+  content:"";
+  display:block;
+  width:min(92%,1180px);
+  height:1px;
+  margin:0 auto 38px;
+  background:linear-gradient(to right,transparent,rgba(157,119,63,.22),transparent);
+}
+
+h2 {
+  font-family:'Cinzel',serif;
+  color:#4a3722;
+  text-shadow:0 1px 0 rgba(255,255,255,.8);
+}
+
+.card {
+  border:1px solid rgba(173,135,76,.24);
+  background:rgba(255,253,248,.91);
+  box-shadow:
+    0 10px 24px rgba(72,49,27,.08),
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.card h4 {
+  color:#604728;
+}
+
+.stat-box {
+  background:linear-gradient(90deg,rgba(171,132,69,.08),rgba(255,255,255,.25));
+  border:1px solid rgba(173,135,76,.12);
+  border-radius:9px;
+  padding:9px 11px;
+}
+
+.top-nav {
+  background:linear-gradient(180deg,rgba(54,39,25,.93),rgba(74,51,29,.90));
+}
+
+.nav-logo {
+  color:#f3dba9;
+}
+
+.nav-links a {
+  letter-spacing:1.3px;
+}
+
+.nav-links a.active {
+  color:#fff2cf;
+  background:rgba(211,170,97,.13);
+}
+
+.nav-toggle {
+  font-family:inherit;
+}
+
+@media(max-width:768px){
+  section {
+    scroll-margin-top:64px;
+  }
+
+  section::before {
+    margin-bottom:28px;
+  }
+
+  h2 {
+    font-size:24px;
+  }
+
+  .top-nav {
+    box-shadow:0 4px 16px rgba(44,29,16,.22);
+  }
+
+  .card {
+    background:rgba(255,253,248,.94);
+  }
+}
+
+
+header.mobile-hero {
+  min-height:100svh;
+}
+
+header.mobile-hero .subtitle::after {
+  content:"";
+  display:block;
+  width:54px;
+  height:1px;
+  margin:13px auto 0;
+  background:linear-gradient(to right,transparent,#b28a4e,transparent);
+}
+
+@media(min-width:769px){
+  header.mobile-hero {
+    min-height:100vh;
+  }
+}
+
+
+.alliance-list div {
+  border:1px solid rgba(173,135,76,.18);
+  background:rgba(255,251,241,.72);
+  position:relative;
+  overflow:hidden;
+}
+
+.alliance-list div::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.32),transparent 45%);
+  pointer-events:none;
+}
+
+.alliance-list div.active {
+  color:#5b4125;
+  border-color:rgba(164,124,63,.42);
+  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(239,222,190,.88));
+  box-shadow:
+    0 7px 16px rgba(72,49,27,.12),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
 </style>
 </head>
 
 <body>
 
+<nav class="top-nav" id="topNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">617 KINGDOM</a>
+    <div class="nav-links">
+      <a href="#kingdom">KINGDOM</a>
+      <a href="#alliances">ALLIANCES</a>
+      <a href="#flamedragon">FLAMEDRAGON</a>
+      <a href="#kvk">KVK</a>
+      <a href="#gallery">GALLERY</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" onclick="toggleNav()">☰</button>
+  </div>
+</nav>
 
 
 
-<header class="mobile-hero">
+
+
+<header class="mobile-hero" id="home">
   <h1>617 KINGDOM</h1>
   <div class="subtitle"></div>
   <a href="https://discord.gg/qp34DBtZps" target="_blank" class="btn">JOIN</a>
@@ -682,7 +969,7 @@ footer {
 
 
 
-<section>
+<section id="kingdom">
   <h2>OUR KINGDOM </h2>
   <div class="overview">
   <div class="card">
@@ -713,22 +1000,83 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
   </div>
 </section>
 
-<section>
+<section id="alliances">
   <h2>OUR ALLIANCES</h2>
   <div class="alliance-container">
     <div class="alliance-list">
-      <div class="active" onclick="showAlliance(event,'alliance1')">🛡️ SOL</div>
-      <div onclick="showAlliance(event,'alliance2')">⚔️ SKI</div>
+      <div class="active" onclick="showAlliance(event,'alliance2')">⚔️ SKI</div>
+      <div onclick="showAlliance(event,'alliance1')">🛡️ SOL</div>
       <div onclick="showAlliance(event,'alliance3')">☁️ SIN</div>
-      <div onclick="showAlliance(event,'alliance4')">🏰 CUZ</div>
+      <div onclick="showAlliance(event,'alliance4')">🏰 cuz</div>
     </div>
-    <div class="image-column" id="images"></div>
+    <div class="image-column id="images"></div>
     <div class="content-column" id="content"></div>
   </div>
 </section>
 
 <!-- 추가된 부분 -->
+<section id="flamedragon">
+  <h2>FLAMEDRAGON TYRANT</h2>
+
+  <div class="kvk-container">
+
+    <div class="kvk-images">
+      <img src="flame1.jpg" onclick="openImg(this.src)" alt="Flame Dragon Tyrant">
+      <img src="flame2.jpg" onclick="openImg(this.src)" alt="Flame Dragon Tyrant">
+    </div>
+
+    <div class="card kvk">
+      <h4>🐉 FLAMEDRAGON TYRANT</h4>
+
+      <p>
+        <strong>🏆 Alliance Ranking</strong><br>
+        Our alliance ranking: <strong>Enter ranking here</strong><br><br>
+
+        <strong>⚔️ How We Participate</strong><br>
+        Everyone in the kingdom can participate in the event.<br><br>
+
+        To give everyone a fair chance to participate, the kingdom is divided into
+        <strong>two alliances</strong> based on participation time:
+        <br><br>
+        • <strong>Full Participation Group</strong> — players who can participate throughout the event.<br>
+        • <strong>Mid-Time Participation Group</strong> — players who can participate during the middle part of the event.<br><br>
+
+        This system allows as many players as possible to participate while keeping the event organized and coordinated.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 <section>
+  <h2>FLAMEDRAGON TYRANT</h2>
+
+  <div class="kvk-container">
+
+    <div class="kvk-images">
+      <img src="flame1.jpg" onclick="openImg(this.src)" alt="Flamedragon Tyrant">
+      <img src="flame2.jpg" onclick="openImg(this.src)" alt="Flamedragon Tyrant">
+    </div>
+
+    <div class="card kvk">
+      <h4>🐉 FLAMEDRAGON TYRANT</h4>
+
+      <p>
+        A server-wide event held once every two months.<br><br>
+
+        To make sure everyone in the kingdom can enjoy the event, we organize the server into
+        two alliances — <strong>617</strong> and <strong>GIR</strong> — based on participation times.
+        Everyone comes together, works as a team, and fights for the best possible result.<br><br>
+
+        <strong>🏆 617 — Ranking: #__</strong><br>
+        <strong>🏆 GIR — Ranking: #__</strong>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="kvk">
   <h2>KVK RECORD</h2>
 
   <div class="kvk-container">
@@ -756,7 +1104,7 @@ Battle Phase: Enter record      </p>
 </section>
 
 
-<section>
+<section id="gallery">
   <h2>GALLERY</h2>
   <div class="gallery">
     <img src="g1.jpg" onclick="openImg(this.src)">
@@ -1032,5 +1380,53 @@ if(e.key==="Escape") closeModal();
 });
 
 showAlliance({currentTarget:document.querySelector(".alliance-list div")},'ari');
+
+function toggleNav(){
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click', function(){
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+
+const navLinks = document.querySelectorAll('.nav-links a');
+const navSections = document.querySelectorAll('header[id], section[id]');
+
+function updateActiveNav(){
+  let current = 'home';
+  const offset = window.scrollY + 120;
+
+  navSections.forEach(function(section){
+    if(section.offsetTop <= offset){
+      current = section.id;
+    }
+  });
+
+  navLinks.forEach(function(link){
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, {passive:true});
+window.addEventListener('load', updateActiveNav);
+
+
+document.addEventListener('click', function(e){
+  const nav = document.getElementById('topNav');
+  const links = document.querySelector('.nav-links');
+  if(nav && links && !nav.contains(e.target)){
+    links.classList.remove('open');
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    const links = document.querySelector('.nav-links');
+    if(links) links.classList.remove('open');
+  }
+});
+
 </script></body>
 </html>
