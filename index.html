@@ -82,7 +82,7 @@ header .subtitle {
   margin-top:24px;
   padding:14px 40px;
   border-radius:50px;
-  background:linear-gradient(135deg, #9b7541, #c6a15b);
+  background:linear-gradient(135deg, #f7c948, #ff6b35);
   backdrop-filter:blur(6px);
   text-decoration:none;
   color:#fff;
@@ -93,7 +93,7 @@ header .subtitle {
   display:flex;
   align-items:center;
   gap:8px;
-  box-shadow:0 6px 20px rgba(91,65,35,0.20), inset 0 1px 0 rgba(255,255,255,0.35);
+  box-shadow:0 6px 20px rgba(255,107,53,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
   transition:all 0.3s ease;
   border:2px solid rgba(255,255,255,0.3);
 }
@@ -373,234 +373,135 @@ footer {
 /* MOBILE */
 @media(max-width:768px){
 
-  html {
-    scroll-behavior:smooth;
-  }
-
   body {
-    background:
-      linear-gradient(rgba(248,242,228,0.08), rgba(248,242,228,0.16)),
-      url('bg.jpg') center top/auto 100svh no-repeat fixed;
-    background-color:#f5f0e6;
-    overflow-x:hidden;
+    background:none;
+    background-color:#f5f3ee;
   }
 
   header {
-    height:100svh;
-    min-height:620px;
-    box-sizing:border-box;
     position:relative;
     overflow:hidden;
-    padding:
-      calc(24px + env(safe-area-inset-top))
-      18px
-      calc(30px + env(safe-area-inset-bottom));
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    isolation:isolate;
+    padding-bottom:40px;
   }
 
-  header::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background:
-      radial-gradient(circle at 50% 48%, rgba(255,255,255,0.12), transparent 42%),
-      linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(94,64,30,0.10));
-    pointer-events:none;
-  }
-
-  header::after {
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-1px;
-    height:110px;
-    z-index:-1;
-    background:linear-gradient(to bottom, transparent, rgba(245,240,230,0.92));
-    pointer-events:none;
-  }
 
   header h1 {
-    display:block;
-    position:relative;
-    z-index:1;
-    margin:0;
-    padding:0 8px;
-    font-family:'Cinzel Decorative','Cinzel',serif;
-    font-size:clamp(29px,8.2vw,39px);
-    font-weight:900;
+    font-size:34px;
     letter-spacing:2px;
-    line-height:1.16;
-    color:#684622;
-    text-shadow:
-      0 2px 0 rgba(255,255,255,0.92),
-      0 4px 0 rgba(133,94,48,0.16),
-      0 8px 18px rgba(69,45,24,0.22);
-    filter:drop-shadow(0 3px 5px rgba(70,46,23,0.14));
-  }
 
-  header h1::before,
-  header h1::after {
-    content:"✦";
-    display:inline-block;
-    margin:0 10px;
-    color:#b28a4e;
-    font-family:Georgia,serif;
-    font-size:0.42em;
-    vertical-align:middle;
+    filter: drop-shadow(0 6px 12px rgba(255,120,40,0.4));
+    text-shadow: 0 2px 0 rgba(255,255,255,0.6);
   }
 
   header .subtitle {
-    display:block;
-    position:relative;
-    z-index:1;
-    margin-top:13px;
-    font-family:'Cinzel',serif;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:3px;
-    color:#86643b;
-    text-transform:uppercase;
-    opacity:0.95;
+    font-size:12px;
+    letter-spacing:4px;
+    color:#8a7a55;
   }
 
   .btn {
-    position:relative;
-    z-index:1;
-    display:inline-flex;
-    align-self:center;
-    justify-content:center;
-    min-width:118px;
-    margin-top:21px;
-    padding:12px 30px;
-    border-radius:30px;
-    font-size:14px;
-    letter-spacing:2px;
-    color:#fff;
-    background:linear-gradient(135deg,#8f6938,#c39a55);
-    border:2px solid rgba(255,255,255,0.58);
+    padding:16px 42px;
+    font-size:18px;
+
+    background: linear-gradient(135deg, #ffcc70, #ff7b42);
+
     box-shadow:
-      0 7px 18px rgba(74,48,22,0.20),
-      inset 0 2px 0 rgba(255,255,255,0.42),
-      inset 0 -2px 0 rgba(82,52,22,0.15);
+      0 6px 18px rgba(255,140,60,0.4),
+      inset 0 3px 6px rgba(255,255,255,0.5);
+
+    border: none;
   }
 
   .btn:active {
-    transform:translateY(1px) scale(0.97);
+    transform: scale(0.96);
   }
 
-  section {
-    padding:52px 14px;
+
+/* 모바일에서는 텍스트 숨김 */
+header h1,
+header .subtitle,
+.btn {
+  display: none;
+}
+
+  /* 🔥 여기 추가된 부분 (원래 밖에 있던거) */
+  header h1, header .btn {
+    position:relative;
+    z-index:1;
   }
 
   h2 {
-    font-size:25px;
-    letter-spacing:1px;
-    margin:0 0 28px;
-    color:#3f3325;
+    font-size:26px;
   }
 
   h2::after {
-    width:150px;
-    margin:12px auto;
-    background:linear-gradient(to right,transparent,#b28a4e,#d2b273,#b28a4e,transparent);
+    width:200px;
   }
 
-  .overview {
+  section {
+    padding:60px 14px;
+  }
+
+  .alliance-container{
     grid-template-columns:1fr;
-    gap:14px;
+    gap:16px;
   }
 
-  .card {
-    border-radius:14px;
-    padding:18px;
-    background:rgba(255,253,248,0.92);
-    box-shadow:
-      0 6px 18px rgba(74,50,27,0.08),
-      inset 0 1px 0 rgba(255,255,255,0.75);
-    border:1px solid rgba(178,138,78,0.22);
-  }
-
-  .card h4 {
-    font-size:15px;
-    line-height:1.35;
-    color:#4a3926;
-  }
-
-  .card p {
-    font-size:14px;
-    line-height:1.65;
-  }
-
-  .alliance-container {
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-
-  .alliance-list {
+  .alliance-list{
     display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:5px;
-  }
-
-  .alliance-list div {
-    min-width:0;
-    padding:10px 4px;
-    border-radius:10px;
-    font-size:11px;
-    line-height:1.2;
-    text-align:center;
-    word-break:break-word;
+    grid-template-columns:repeat(5, 1fr);
+    gap:6px;
   }
 
   .image-column {
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px;
-  }
-
-  .image-column img {
-    width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
-    border-radius:10px;
-  }
-
-  .content-column {
-    gap:12px;
-  }
-
-  .kvk-container {
-    gap:14px;
-  }
-
-  .kvk-images {
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
     gap:10px;
   }
 
-  .kvk-images img {
-    height:auto;
-    max-height:none;
-    aspect-ratio:16/9;
-    object-fit:cover;
+  .image-column img {
+    aspect-ratio:1;
   }
+/* 🔥 여기다가 붙여넣기 */
 
-  footer {
-    padding:30px 0;
-    font-size:12px;
-  }
-
-  .modal img {
-    max-width:94%;
-    max-height:82vh;
-  }
-
+.mobile-hero {
+  height:90vh;
+  background:url('bg.jpg') center top/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
+
+.mobile-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.1);
+}
+
+header h1,
+header .subtitle,
+.btn {
+  position:relative;
+  z-index:1;
+}
+
+header h1 {
+  font-family:'Press Start 2P', cursive;
+  text-shadow:3px 3px 0 #000;
+  color:#fff;
+}
+
+.btn {
+  background:#ffcc00;
+  border:3px solid #000;
+  color:#000;
+}
+
+/* 👉 그 다음 이 닫히는 } 유지 */
+}
+
 
 .kvk-container {
   max-width: 1100px;
@@ -666,282 +567,61 @@ footer {
   border: 1px solid rgba(255,160,60,0.8);
 }
 
-/* GAME-STYLE NAVIGATION */
-html { scroll-padding-top:72px; }
+html { scroll-padding-top:76px; }
+section { position:relative; scroll-margin-top:76px; }
+h2 { font-family:'Cinzel',serif; color:#4a3722; text-shadow:0 1px 0 rgba(255,255,255,.8); }
 
 .top-nav {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:5000;
-  background:rgba(67,47,27,0.82);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(221,188,126,0.35);
-  box-shadow:0 4px 18px rgba(46,31,17,0.16);
-}
-
-.nav-inner {
-  max-width:1200px;
-  height:68px;
-  margin:auto;
-  padding:0 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-sizing:border-box;
-}
-
-.nav-logo {
-  font-family:'Cinzel Decorative','Cinzel',serif;
-  font-weight:900;
-  font-size:18px;
-  letter-spacing:2px;
-  color:#f4dfb1;
-  text-decoration:none;
-  text-shadow:0 2px 5px rgba(0,0,0,0.28);
-  white-space:nowrap;
-}
-
-.nav-links {
-  display:flex;
-  align-items:center;
-  gap:4px;
-}
-
-.nav-links a {
-  position:relative;
-  padding:10px 13px;
-  color:#f7ead0;
-  font-family:'Cinzel',serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.2px;
-  text-decoration:none;
-  border-radius:8px;
-  transition:all .2s ease;
-}
-
-.nav-links a::after {
-  content:"";
-  position:absolute;
-  left:14px;
-  right:14px;
-  bottom:5px;
-  height:1px;
-  background:#d2ad68;
-  transform:scaleX(0);
-  transition:transform .2s ease;
-}
-
-.nav-links a:hover {
-  color:#fff6df;
-  background:rgba(255,255,255,0.08);
-}
-
-.nav-links a:hover::after {
-  transform:scaleX(1);
-}
-
-.nav-toggle {
-  display:none;
-  border:1px solid rgba(231,201,145,0.5);
-  background:rgba(255,255,255,0.08);
-  color:#f7ead0;
-  border-radius:8px;
-  padding:7px 10px;
-  font-size:20px;
-  cursor:pointer;
-}
-
-@media(max-width:768px){
-  .top-nav {
-    background:rgba(61,43,27,0.88);
-  }
-
-  .nav-inner {
-    height:58px;
-    padding:0 14px;
-  }
-
-  .nav-logo {
-    font-size:13px;
-    letter-spacing:1.2px;
-  }
-
-  .nav-toggle {
-    display:block;
-  }
-
-  .nav-links {
-    display:none;
-    position:absolute;
-    top:58px;
-    left:10px;
-    right:10px;
-    padding:8px;
-    flex-direction:column;
-    align-items:stretch;
-    gap:2px;
-    background:rgba(61,43,27,0.96);
-    border:1px solid rgba(221,188,126,0.28);
-    border-radius:0 0 12px 12px;
-    box-shadow:0 10px 25px rgba(40,25,12,0.22);
-  }
-
-  .nav-links.open {
-    display:flex;
-  }
-
-  .nav-links a {
-    padding:12px 14px;
-    font-size:11px;
-  }
-
-  .nav-links a::after {
-    display:none;
-  }
-}
-
-
-/* ===== KINGDOM GAME PORTAL POLISH ===== */
-body {
-  color:#4a3926;
-}
-
-section {
-  position:relative;
-  scroll-margin-top:78px;
-}
-
-section::before {
-  content:"";
-  display:block;
-  width:min(92%,1180px);
-  height:1px;
-  margin:0 auto 38px;
-  background:linear-gradient(to right,transparent,rgba(157,119,63,.22),transparent);
-}
-
-h2 {
-  font-family:'Cinzel',serif;
-  color:#4a3722;
-  text-shadow:0 1px 0 rgba(255,255,255,.8);
-}
-
-.card {
-  border:1px solid rgba(173,135,76,.24);
-  background:rgba(255,253,248,.91);
-  box-shadow:
-    0 10px 24px rgba(72,49,27,.08),
-    inset 0 1px 0 rgba(255,255,255,.8);
-}
-
-.card h4 {
-  color:#604728;
-}
-
-.stat-box {
-  background:linear-gradient(90deg,rgba(171,132,69,.08),rgba(255,255,255,.25));
-  border:1px solid rgba(173,135,76,.12);
-  border-radius:9px;
-  padding:9px 11px;
-}
-
-.top-nav {
+  position:fixed; top:0; left:0; right:0; z-index:5000;
   background:linear-gradient(180deg,rgba(54,39,25,.93),rgba(74,51,29,.90));
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(221,188,126,.35);
+  box-shadow:0 4px 18px rgba(46,31,17,.16);
 }
+.nav-inner { max-width:1200px; height:68px; margin:auto; padding:0 22px; display:flex; align-items:center; justify-content:space-between; box-sizing:border-box; }
+.nav-logo { font-family:'Cinzel Decorative','Cinzel',serif; font-weight:900; font-size:18px; letter-spacing:2px; color:#f3dba9; text-decoration:none; white-space:nowrap; }
+.nav-links { display:flex; align-items:center; gap:4px; }
+.nav-links a { position:relative; padding:10px 13px; color:#f7ead0; font-family:'Cinzel',serif; font-size:11px; font-weight:700; letter-spacing:1.2px; text-decoration:none; border-radius:8px; transition:.2s; }
+.nav-links a:hover,.nav-links a.active { color:#fff6df; background:rgba(211,170,97,.13); }
+.nav-links a::after { content:""; position:absolute; left:14px; right:14px; bottom:5px; height:1px; background:#d2ad68; transform:scaleX(0); transition:.2s; }
+.nav-links a:hover::after,.nav-links a.active::after { transform:scaleX(1); }
+.nav-toggle { display:none; border:1px solid rgba(231,201,145,.5); background:rgba(255,255,255,.08); color:#f7ead0; border-radius:8px; padding:7px 10px; font-size:20px; cursor:pointer; }
 
-.nav-logo {
-  color:#f3dba9;
-}
-
-.nav-links a {
-  letter-spacing:1.3px;
-}
-
-.nav-links a.active {
-  color:#fff2cf;
-  background:rgba(211,170,97,.13);
-}
-
-.nav-toggle {
-  font-family:inherit;
-}
+.card { border:1px solid rgba(173,135,76,.24); background:rgba(255,253,248,.92); box-shadow:0 10px 24px rgba(72,49,27,.08),inset 0 1px 0 rgba(255,255,255,.8); }
+.alliance-list div { border:1px solid rgba(173,135,76,.18); }
+.alliance-list div.active { color:#5b4125; border-color:rgba(164,124,63,.42); background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(239,222,190,.88)); }
 
 @media(max-width:768px){
-  section {
-    scroll-margin-top:64px;
-  }
+  html { scroll-padding-top:64px; }
+  .top-nav { background:rgba(61,43,27,.94); }
+  .nav-inner { height:58px; padding:0 14px; }
+  .nav-logo { font-size:13px; letter-spacing:1.2px; }
+  .nav-toggle { display:block; }
+  .nav-links { display:none; position:absolute; top:58px; left:10px; right:10px; padding:8px; flex-direction:column; align-items:stretch; gap:2px; background:rgba(61,43,27,.97); border:1px solid rgba(221,188,126,.28); border-radius:0 0 12px 12px; box-shadow:0 10px 25px rgba(40,25,12,.22); }
+  .nav-links.open { display:flex; }
+  .nav-links a { padding:12px 14px; font-size:11px; }
+  .nav-links a::after { display:none; }
 
-  section::before {
-    margin-bottom:28px;
-  }
-
-  h2 {
-    font-size:24px;
-  }
-
-  .top-nav {
-    box-shadow:0 4px 16px rgba(44,29,16,.22);
-  }
-
-  .card {
-    background:rgba(255,253,248,.94);
-  }
-}
-
-
-header.mobile-hero {
-  min-height:100svh;
-}
-
-header.mobile-hero .subtitle::after {
-  content:"";
-  display:block;
-  width:54px;
-  height:1px;
-  margin:13px auto 0;
-  background:linear-gradient(to right,transparent,#b28a4e,transparent);
-}
-
-@media(min-width:769px){
-  header.mobile-hero {
-    min-height:100vh;
-  }
-}
-
-
-.alliance-list div {
-  border:1px solid rgba(173,135,76,.18);
-  background:rgba(255,251,241,.72);
-  position:relative;
-  overflow:hidden;
-}
-
-.alliance-list div::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.32),transparent 45%);
-  pointer-events:none;
-}
-
-.alliance-list div.active {
-  color:#5b4125;
-  border-color:rgba(164,124,63,.42);
-  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(239,222,190,.88));
-  box-shadow:
-    0 7px 16px rgba(72,49,27,.12),
-    inset 0 1px 0 rgba(255,255,255,.9);
+  body { overflow-x:hidden; background:linear-gradient(rgba(248,242,228,.08),rgba(248,242,228,.16)),url('bg.jpg') center top/auto 100svh no-repeat fixed; background-color:#f5f0e6; }
+  header { height:100svh; min-height:620px; box-sizing:border-box; position:relative; overflow:hidden; padding:calc(24px + env(safe-area-inset-top)) 18px calc(30px + env(safe-area-inset-bottom)); justify-content:center; align-items:center; text-align:center; }
+  header::before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(circle at 50% 48%,rgba(255,255,255,.12),transparent 42%),linear-gradient(to bottom,rgba(255,255,255,.03),rgba(94,64,30,.10)); }
+  header h1 { display:block; font-size:clamp(29px,8.2vw,39px); letter-spacing:2px; }
+  header .subtitle { display:block; font-size:10px; letter-spacing:3px; margin-top:13px; }
+  .btn { display:inline-flex; align-self:center; justify-content:center; min-width:118px; margin-top:21px; padding:12px 30px; font-size:14px; letter-spacing:2px; background:linear-gradient(135deg,#8f6938,#c39a55); border:2px solid rgba(255,255,255,.58); }
+  section { padding:52px 14px; }
+  h2 { font-size:25px; letter-spacing:1px; }
+  .alliance-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
+  .alliance-list div { padding:10px 4px; font-size:11px; border-radius:10px; }
+  .image-column { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .kvk-images { grid-template-columns:1fr; gap:10px; }
+  .kvk-images img { height:auto; aspect-ratio:16/9; object-fit:cover; }
+  .card { background:rgba(255,253,248,.94); border-radius:14px; padding:18px; }
 }
 
 </style>
 </head>
 
 <body>
-
 <nav class="top-nav" id="topNav">
   <div class="nav-inner">
     <a href="#home" class="nav-logo">617 KINGDOM</a>
@@ -962,7 +642,7 @@ header.mobile-hero .subtitle::after {
 
 <header class="mobile-hero" id="home">
   <h1>617 KINGDOM</h1>
-  <div class="subtitle"></div>
+  <div class="subtitle">Kingdom 617</div>
   <a href="https://discord.gg/qp34DBtZps" target="_blank" class="btn">JOIN</a>
 </header>
 
@@ -987,13 +667,13 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
 <div class="card">
   <h4>KINGDOM RULES</h4>
   <p>
-    <strong>🛡️NAP Policy</strong><br>
+    <strong>🛡️ NAP Policy</strong><br>
     Enter NAP rules here.<br><br>
 
-    <strong>🏰Castle Battle Rules</strong><br>
+    <strong>🏰 Castle Battle Rules</strong><br>
     Enter Castle Battle rules here.<br><br>
 
-    <strong>🔥All-Out Policy</strong><br>
+    <strong>🔥 All-Out Policy</strong><br>
     Enter resource tile / TC attack rules here.  </p>
 </div>
 
@@ -1009,7 +689,7 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
       <div onclick="showAlliance(event,'alliance3')">☁️ SIN</div>
       <div onclick="showAlliance(event,'alliance4')">🏰 cuz</div>
     </div>
-    <div class="image-column id="images"></div>
+    <div class="image-column" id="images"></div>
     <div class="content-column" id="content"></div>
   </div>
 </section>
@@ -1017,42 +697,7 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
 <!-- 추가된 부분 -->
 <section id="flamedragon">
   <h2>FLAMEDRAGON TYRANT</h2>
-
   <div class="kvk-container">
-
-    <div class="kvk-images">
-      <img src="flame1.jpg" onclick="openImg(this.src)" alt="Flame Dragon Tyrant">
-      <img src="flame2.jpg" onclick="openImg(this.src)" alt="Flame Dragon Tyrant">
-    </div>
-
-    <div class="card kvk">
-      <h4>🐉 FLAMEDRAGON TYRANT</h4>
-
-      <p>
-        <strong>🏆 Alliance Ranking</strong><br>
-        Our alliance ranking: <strong>Enter ranking here</strong><br><br>
-
-        <strong>⚔️ How We Participate</strong><br>
-        Everyone in the kingdom can participate in the event.<br><br>
-
-        To give everyone a fair chance to participate, the kingdom is divided into
-        <strong>two alliances</strong> based on participation time:
-        <br><br>
-        • <strong>Full Participation Group</strong> — players who can participate throughout the event.<br>
-        • <strong>Mid-Time Participation Group</strong> — players who can participate during the middle part of the event.<br><br>
-
-        This system allows as many players as possible to participate while keeping the event organized and coordinated.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>FLAMEDRAGON TYRANT</h2>
-
-  <div class="kvk-container">
-
     <div class="kvk-images">
       <img src="flame1.jpg" onclick="openImg(this.src)" alt="Flamedragon Tyrant">
       <img src="flame2.jpg" onclick="openImg(this.src)" alt="Flamedragon Tyrant">
@@ -1060,19 +705,17 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
 
     <div class="card kvk">
       <h4>🐉 FLAMEDRAGON TYRANT</h4>
-
       <p>
         A server-wide event held once every two months.<br><br>
 
-        To make sure everyone in the kingdom can enjoy the event, we organize the server into
-        two alliances — <strong>617</strong> and <strong>GIR</strong> — based on participation times.
+        To make sure everyone in the kingdom can enjoy the event, we organize the server into two alliances —
+        <strong>617</strong> and <strong>GIR</strong> — based on participation times.
         Everyone comes together, works as a team, and fights for the best possible result.<br><br>
 
         <strong>🏆 617 — Ranking: #__</strong><br>
         <strong>🏆 GIR — Ranking: #__</strong>
       </p>
     </div>
-
   </div>
 </section>
 
@@ -1090,11 +733,12 @@ With strong KvK results and active leadership, we’ve become a trusted and reco
       <h4>KVK RESULTS</h4>
 
       <p>
-Kingdom ranking / record: Enter information here.<br><br>
+🔥 Ranked #93 out of 1,529 servers (KingShot Atlas - Apr 11, 2026)<br><br>
 
 <h4>⚔ KVK Performance</h4><br>
-Preparation Phase: Enter record<br>
-Battle Phase: Enter record      </p>
+Preparation Phase: 7 Wins / 8 Battles (6-win streak, 88%)<br>
+Battle Phase: 4 Wins / 8 Battles (2-win streak, 50%)
+      </p>
 
     </div>
 
@@ -1123,7 +767,7 @@ Battle Phase: Enter record      </p>
 </section>
 
 <footer>
-  © 617 Kingdom
+  © 617 Kingdom — Bangchang
 </footer>
 
 <!-- Image Modal -->
@@ -1138,49 +782,20 @@ alliance1:{
   content:`
     <div class="card">
       <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">
-      🛡️ SOL
-      </p>
-      <div class="stat-box">
-        <div class="stat-left">⚔ Power —</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-left">👥 Members — / 100</div>
-      </div>
+      <p style="font-weight:600; margin-bottom:10px;">🛡️ SOL</p>
+      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
     </div>
-
     <div class="card">
       <h4>Alliance Policy / Philosophy</h4>
-      <p>
-      We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
-      </p>
+      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
     </div>
-
-    <div class="card">
-      <h4>Bear Hunt (Trap 1 & 2)</h4>
-      <p>Enter schedule.</p>
-    </div>
-
-    <div class="card">
-      <h4>Major Events</h4>
-      <p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p>
-    </div>
-
-    <div class="card">
-      <h4>Message from Leadership</h4>
-      <p>Enter leadership message.</p>
-    </div>
-
-    <div class="card">
-      <h4>Requirements</h4>
-      <p>Enter requirements.</p>
-    </div>
-
-    <div class="card">
-      <h4>How to Apply</h4>
-      <p>Enter application information.</p>
-    </div>
+    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
   `
 },
 alliance2:{
@@ -1188,49 +803,20 @@ alliance2:{
   content:`
     <div class="card">
       <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">
-      ⚔️ SKI
-      </p>
-      <div class="stat-box">
-        <div class="stat-left">⚔ Power —</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-left">👥 Members — / 100</div>
-      </div>
+      <p style="font-weight:600; margin-bottom:10px;">⚔️ SKI</p>
+      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
     </div>
-
     <div class="card">
       <h4>Alliance Policy / Philosophy</h4>
-      <p>
-      We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
-      </p>
+      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
     </div>
-
-    <div class="card">
-      <h4>Bear Hunt (Trap 1 & 2)</h4>
-      <p>Enter schedule.</p>
-    </div>
-
-    <div class="card">
-      <h4>Major Events</h4>
-      <p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p>
-    </div>
-
-    <div class="card">
-      <h4>Message from Leadership</h4>
-      <p>Enter leadership message.</p>
-    </div>
-
-    <div class="card">
-      <h4>Requirements</h4>
-      <p>Enter requirements.</p>
-    </div>
-
-    <div class="card">
-      <h4>How to Apply</h4>
-      <p>Enter application information.</p>
-    </div>
+    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
   `
 },
 alliance3:{
@@ -1238,49 +824,20 @@ alliance3:{
   content:`
     <div class="card">
       <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">
-      ☁️ SIN
-      </p>
-      <div class="stat-box">
-        <div class="stat-left">⚔ Power —</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-left">👥 Members — / 100</div>
-      </div>
+      <p style="font-weight:600; margin-bottom:10px;">☁️ SIN</p>
+      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
     </div>
-
     <div class="card">
       <h4>Alliance Policy / Philosophy</h4>
-      <p>
-      We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
-      </p>
+      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
     </div>
-
-    <div class="card">
-      <h4>Bear Hunt (Trap 1 & 2)</h4>
-      <p>Enter schedule.</p>
-    </div>
-
-    <div class="card">
-      <h4>Major Events</h4>
-      <p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p>
-    </div>
-
-    <div class="card">
-      <h4>Message from Leadership</h4>
-      <p>Enter leadership message.</p>
-    </div>
-
-    <div class="card">
-      <h4>Requirements</h4>
-      <p>Enter requirements.</p>
-    </div>
-
-    <div class="card">
-      <h4>How to Apply</h4>
-      <p>Enter application information.</p>
-    </div>
+    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
   `
 },
 alliance4:{
@@ -1288,49 +845,20 @@ alliance4:{
   content:`
     <div class="card">
       <h4>📊 Overview</h4>
-      <p style="font-weight:600; margin-bottom:10px;">
-      🏰 CUZ
-      </p>
-      <div class="stat-box">
-        <div class="stat-left">⚔ Power —</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-left">👥 Members — / 100</div>
-      </div>
+      <p style="font-weight:600; margin-bottom:10px;">🏰 cuz</p>
+      <div class="stat-box"><div class="stat-left">⚔ Power —</div></div>
+      <div class="stat-box"><div class="stat-left">👥 Members — / 100</div></div>
     </div>
-
     <div class="card">
       <h4>Alliance Policy / Philosophy</h4>
-      <p>
-      We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
-      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.
-      </p>
+      <p>We’re a close-knit group of good people who enjoy playing together, helping each other, and growing as a team.<br><br>
+      We value kindness, teamwork, and a welcoming atmosphere. Whether you’re strong, still developing, a spender, or F2P, everyone matters and everyone has a place here.</p>
     </div>
-
-    <div class="card">
-      <h4>Bear Hunt (Trap 1 & 2)</h4>
-      <p>Enter schedule.</p>
-    </div>
-
-    <div class="card">
-      <h4>Major Events</h4>
-      <p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p>
-    </div>
-
-    <div class="card">
-      <h4>Message from Leadership</h4>
-      <p>Enter leadership message.</p>
-    </div>
-
-    <div class="card">
-      <h4>Requirements</h4>
-      <p>Enter requirements.</p>
-    </div>
-
-    <div class="card">
-      <h4>How to Apply</h4>
-      <p>Enter application information.</p>
-    </div>
+    <div class="card"><h4>Bear Hunt (Trap 1 & 2)</h4><p>Enter schedule.</p></div>
+    <div class="card"><h4>Major Events</h4><p>Bear Hunt, Vikings, Swordland, Tri-Alliance, Castle battles, KvK, and other alliance events.</p></div>
+    <div class="card"><h4>Message from Leadership</h4><p>Enter leadership message.</p></div>
+    <div class="card"><h4>Requirements</h4><p>Enter requirements.</p></div>
+    <div class="card"><h4>How to Apply</h4><p>Enter application information.</p></div>
   `
 }
 };
@@ -1379,53 +907,20 @@ document.addEventListener("keydown",function(e){
 if(e.key==="Escape") closeModal();
 });
 
-showAlliance({currentTarget:document.querySelector(".alliance-list div")},'ari');
+showAlliance({currentTarget:document.querySelector('.alliance-list div')},'alliance2');
 
 function toggleNav(){
   document.querySelector('.nav-links').classList.toggle('open');
 }
 document.querySelectorAll('.nav-links a').forEach(function(link){
-  link.addEventListener('click', function(){
+  link.addEventListener('click',function(){
     document.querySelector('.nav-links').classList.remove('open');
   });
 });
-
-
-const navLinks = document.querySelectorAll('.nav-links a');
-const navSections = document.querySelectorAll('header[id], section[id]');
-
-function updateActiveNav(){
-  let current = 'home';
-  const offset = window.scrollY + 120;
-
-  navSections.forEach(function(section){
-    if(section.offsetTop <= offset){
-      current = section.id;
-    }
-  });
-
-  navLinks.forEach(function(link){
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-  });
-}
-
-window.addEventListener('scroll', updateActiveNav, {passive:true});
-window.addEventListener('load', updateActiveNav);
-
-
-document.addEventListener('click', function(e){
-  const nav = document.getElementById('topNav');
-  const links = document.querySelector('.nav-links');
-  if(nav && links && !nav.contains(e.target)){
-    links.classList.remove('open');
-  }
-});
-
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape'){
-    const links = document.querySelector('.nav-links');
-    if(links) links.classList.remove('open');
-  }
+document.addEventListener('click',function(e){
+  var nav=document.getElementById('topNav');
+  var links=document.querySelector('.nav-links');
+  if(nav && links && !nav.contains(e.target)) links.classList.remove('open');
 });
 
 </script></body>
