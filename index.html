@@ -49,15 +49,15 @@ header h1 {
   font-family:'Cinzel Decorative','Cinzel',serif;
   font-size:58px;
   font-weight:900;
-  color:#684622;
-  letter-spacing:5px;
+  color:#6b4a27;
+  letter-spacing:4px;
   text-align:center;
   line-height:1.15;
   text-shadow:
     0 2px 0 rgba(255,255,255,0.92),
-    0 4px 0 rgba(133,94,48,0.16),
-    0 8px 18px rgba(69,45,24,0.20);
-  filter:drop-shadow(0 3px 7px rgba(70,46,23,0.14));
+    0 4px 0 rgba(133,94,48,0.15),
+    0 8px 18px rgba(69,45,24,0.18);
+  filter:drop-shadow(0 3px 6px rgba(70,46,23,0.12));
 }
 
 @keyframes shimmer {
@@ -67,7 +67,7 @@ header h1 {
 }
 
 header .subtitle {
-  font-family:'Cinzel',serif;
+  font-family:'Fredoka',sans-serif;
   font-size:14px;
   font-weight:600;
   color:#80633f;
@@ -569,7 +569,7 @@ header h1 {
 
 html { scroll-padding-top:76px; }
 section { position:relative; scroll-margin-top:76px; }
-h2 { font-family:'Cinzel',serif; color:#4a3722; text-shadow:0 1px 0 rgba(255,255,255,.8); }
+h2 { font-family:'Fredoka',sans-serif; color:#4a3722; text-shadow:0 1px 0 rgba(255,255,255,.8); }
 
 .top-nav {
   position:fixed; top:0; left:0; right:0; z-index:5000;
@@ -613,9 +613,106 @@ h2 { font-family:'Cinzel',serif; color:#4a3722; text-shadow:0 1px 0 rgba(255,255
   .alliance-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
   .alliance-list div { padding:10px 4px; font-size:11px; border-radius:10px; }
   .image-column { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
-  .kvk-images { grid-template-columns:1fr; gap:10px; }
+  .kvk-images { grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
   .kvk-images img { height:auto; aspect-ratio:16/9; object-fit:cover; }
   .card { background:rgba(255,253,248,.94); border-radius:14px; padding:18px; }
+}
+
+
+/* Dragon / KVK image pairs: always two images in one row */
+.kvk-images {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:12px;
+  width:100%;
+}
+
+.kvk-images img {
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+@media(max-width:768px){
+  .kvk-container {
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .kvk-images {
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:7px;
+  }
+
+  .kvk-images img {
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
+    border-radius:10px;
+  }
+
+  /* Keep the first screen compact and centered on phones */
+  header {
+    min-height:100svh;
+    height:100svh;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  header h1 {
+    font-size:clamp(28px,8vw,38px);
+    letter-spacing:1.5px;
+  }
+
+  header .subtitle {
+    font-family:'Fredoka',sans-serif;
+    font-size:10px;
+    letter-spacing:2.5px;
+  }
+
+  section {
+    padding:44px 13px;
+  }
+
+  h2 {
+    font-family:'Fredoka',sans-serif;
+    font-size:24px;
+    font-weight:700;
+  }
+
+  .alliance-container {
+    width:100%;
+  }
+
+  .content-column {
+    min-width:0;
+  }
+
+  .card {
+    padding:17px;
+  }
+}
+
+
+.hero-star {
+  display:inline-block;
+  color:#b28a4e;
+  font-family:Georgia,serif;
+  font-size:.42em;
+  vertical-align:middle;
+  margin:0 10px;
+  transform:translateY(-1px);
+  text-shadow:0 1px 0 rgba(255,255,255,.85);
+}
+@media(max-width:768px){
+  .hero-star {
+    font-size:.4em;
+    margin:0 7px;
+  }
 }
 
 </style>
@@ -641,9 +738,8 @@ h2 { font-family:'Cinzel',serif; color:#4a3722; text-shadow:0 1px 0 rgba(255,255
 
 
 <header class="mobile-hero" id="home">
-  <h1>617 KINGDOM</h1>
-  <div class="subtitle">Kingdom 617</div>
-  <a href="https://discord.gg/qp34DBtZps" target="_blank" class="btn">JOIN</a>
+  <h1><span class="hero-star">✦</span> 617 KINGDOM <span class="hero-star">✦</span></h1>
+    <a href="https://discord.gg/qp34DBtZps" target="_blank" class="btn">JOIN</a>
 </header>
 
 
